@@ -46,5 +46,18 @@ namespace Ucu.Poo.Defense
                 return total;
             }
         }
+        public string AsText()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Fecha: {EndDate}");
+
+            foreach (OfferItem item in items)
+            {
+                sb.AppendLine(item.AsText());
+            }
+
+            sb.AppendLine($"Costo Total: {Total}");
+            return sb.ToString();
+        }
     }
 }

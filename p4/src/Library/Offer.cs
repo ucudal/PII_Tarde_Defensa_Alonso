@@ -40,9 +40,9 @@ namespace Ucu.Poo.Defense
 
         public OfferItem AddItem(Residue Residue, int quantity, int price)
         {
-            OfferItem item = new OfferItem(Residue, quantity, price);
+            IOfferItem item = new OfferItem(Residue, quantity, price);
             this.items.Add(item);
-            return item;
+            return (OfferItem)item;
         }
 
         public PromoCode AddDiscount (int discount)
